@@ -1,20 +1,57 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      RETO
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="settings-outline" (click)="goToSettings()"></ion-icon>      
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="home">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div>
+    <div class="bienvenue">
+      <h1 class="title">Bienvenue {{titre}}</h1>
+    </div>
+    <div class="infosContainer">
+      <div class="infosChallenge">
+        <h2>{{nbrChallenge}}</h2>
+        <p class="subtitle">Retos</p>
+      </div>
+      <div class="infosScore">
+        <h2>{{score}}</h2>
+        <p class="subtitle">Score</p>
+      </div>
+    </div>
+    <div>
+      <h4 class="success">Prochaine récompense: {{nbrChallenge}}/{{objectif}}</h4>
+      <ion-range>
+        <p slot="start">{{nbrChallenge}}</p>
+        <p slot="end">{{objectif}}</p>
+      </ion-range>
+    </div>
   </div>
+
+  <div *ngIf="this.category != null && this.challenge != 'null'" class="chall-container">
+    <h1  class="category">{{ category }}</h1>
+    <div class="challenge-box" *ngIf="this.end != true && this.challenge != 'null'">
+      <p class="challenge">{{ challenge }}</p>
+      <ion-button id="open-modal" (click)="endChall()" expand="block">Terminé</ion-button>
+    </div>
+  </div>
+  <div *ngIf="this.challenge == 'null' && this.category == null">
+    <div class="noChall">
+      <p>Vous n'avez pas encore de Reto, mettez vous au défi !</p>
+    </div>
+    <ion-button id="open-modal" (click)="openCategoryModal()" expand="block">RETO</ion-button>
+  </div>
+
+
+  
+
+
 </ion-content>
