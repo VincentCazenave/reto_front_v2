@@ -1,0 +1,21 @@
+.category-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+}
+
+.modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
+}
+
+.category{
+    --width: 8rem;
+    --height: 8rem;
+    --ion-background-color: red;
+    margin: 0.8rem;
+    margin-bottom: 0;
+  }
+
+ion-grid{
+    padding-top: 0.6rem;
+}  

@@ -1,0 +1,17 @@
+<ion-content class="modal">
+  <ion-toolbar>
+    <h1>Choisis une Catégorie</h1>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="dismiss('null')">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div >
+    <ion-grid>
+      <ion-row>
+        <ion-button class="category" style="width: 8rem; height: 8rem;" *ngFor="let category of categories" class="category" size="5" size-md="4"
+          size-lg="2" (click)="getChallenge(category)">{{category}}
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
