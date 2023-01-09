@@ -1,0 +1,13 @@
+<ion-content id="modal2">
+  <ion-toolbar>
+    <h1>Votre challenge</h1>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="dismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <h1>{{category}}</h1>
+  <h4>Score potentiel: {{score}}</h4>
+  <p>{{ challenge }}</p>
+  <ion-button color="light" (click)="getChallenge()" block>Changer</ion-button>
+  <ion-button color="light" (click)="accepter()" block>Accepter</ion-button>
+</ion-content>
